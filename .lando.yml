@@ -1,0 +1,4 @@
+name: drupalreact-portfolio
+recipe: drupal10
+config:
+  webroot: web
