@@ -63,7 +63,12 @@ const Projects = () => {
                 <div>No content available</div>
               )}
 
-              <a href="#">See GitHub repository</a>
+              <a
+                href={`${project.attributes.field_github_link.uri}`}
+                target="_blank"
+              >
+                See GitHub repository
+              </a>
             </div>
           ))}
       </div>
