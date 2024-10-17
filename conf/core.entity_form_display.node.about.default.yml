@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.about.body
+    - field.field.node.about.field_image
+    - image.style.thumbnail
     - node.type.about
   module:
+    - image
     - path
     - text
 id: node.about.default
@@ -28,6 +31,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   path:
     type: path
