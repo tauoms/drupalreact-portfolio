@@ -40,27 +40,22 @@ const About = () => {
 
   return (
     <section id="about">
-      <h1>About</h1>
-      <div className="text-container">
-        {content && content.attributes && content.attributes.body ? (
-          <>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: content.attributes.body.value,
-              }}
-            />
-            {imageUrl && (
-              <img
-                src={imageUrl}
-                alt={imageData.meta.alt}
-                width={imageData.meta.width}
-                height={imageData.meta.height}
+      <h4>About</h4>
+      <div className="container">
+        <div className="text-container">
+          {content && content.attributes && content.attributes.body ? (
+            <>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: content.attributes.body.value,
+                }}
               />
-            )}
-          </>
-        ) : (
-          <div>No content available</div>
-        )}
+            </>
+          ) : (
+            <div>No content available</div>
+          )}
+        </div>
+        {imageUrl && <img src={imageUrl} className="portrait" />}
       </div>
     </section>
   );
