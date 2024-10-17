@@ -35,6 +35,55 @@ const Contact = () => {
           <span className="visually-hidden">author&apos;s CV</span>
         </a>
       </div>
+
+      <div className="formcontainer">
+        <form
+          action="mailto:your-email@example.com"
+          method="POST"
+          autoComplete="on"
+        >
+          <label htmlFor="firstname" className="label">
+            First Name:{" "}
+          </label>
+          <br />
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            autoComplete="on"
+          />
+          <br />
+
+          <label htmlFor="lastname" className="label">
+            Last Name:{" "}
+          </label>
+          <br />
+          <input type="text" name="lastname" id="lastname" autoComplete="on" />
+          <br />
+
+          <label htmlFor="email" className="label">
+            E-Mail:{" "}
+          </label>
+          <br />
+          <input type="email" name="email" id="email" autoComplete="on" />
+          <br />
+
+          <label htmlFor="message" className="label">
+            Message:{" "}
+          </label>
+          <br />
+          <textarea
+            name="textinput"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Input message here."
+          />
+          <br />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     </>
   );
 };
