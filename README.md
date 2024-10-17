@@ -2,6 +2,10 @@
 
 This project is a full-stack web application that uses **Drupal** for the backend and **React** for the frontend. The project is containerized using **Lando**, which provides an easy-to-use local development environment. The backend serves as a headless Drupal API, while the React frontend consumes this API.
 
+## Screenshot
+
+![Screenshot 2024-10-17 at 17 35 01](https://github.com/user-attachments/assets/c195a9bb-61b2-4dd1-a4cc-2fe2cb478834)
+
 ## Prerequisites
 
 Before you can run the project, make sure you have the following installed:
