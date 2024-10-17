@@ -4,7 +4,7 @@ This project is a full-stack web application that uses **Drupal** for the backen
 
 ## Screenshot
 
-![Screenshot 2024-10-17 at 17 35 01](https://github.com/user-attachments/assets/c195a9bb-61b2-4dd1-a4cc-2fe2cb478834)
+![Screenshot 2024-10-17 at 19 15 44](https://github.com/user-attachments/assets/8902ca19-e4c1-49b8-9eb0-0762766283ac)
 
 ## Prerequisites
 
