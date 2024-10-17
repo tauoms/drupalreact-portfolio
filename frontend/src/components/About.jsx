@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { fetchContent } from '../services/api';
+import { useEffect, useState } from "react";
+import { fetchContent } from "../services/api";
 
 const About = () => {
   const [content, setContent] = useState(null);
 
   useEffect(() => {
-    fetchContent('about').then((data) => setContent(data));
+    fetchContent("about").then((data) => setContent(data));
   }, []);
 
   return (

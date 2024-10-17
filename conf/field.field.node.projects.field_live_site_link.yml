@@ -1,0 +1,23 @@
+uuid: 8af91bc6-1a25-4d4e-8c60-b890c40376f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_live_site_link
+    - node.type.projects
+  module:
+    - link
+id: node.projects.field_live_site_link
+field_name: field_live_site_link
+entity_type: node
+bundle: projects
+label: 'Live Site Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

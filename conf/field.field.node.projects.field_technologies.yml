@@ -1,0 +1,19 @@
+uuid: 7e9ce8e5-2ce6-418e-b13d-7ee4844629c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_technologies
+    - node.type.projects
+id: node.projects.field_technologies
+field_name: field_technologies
+entity_type: node
+bundle: projects
+label: Technologies
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
