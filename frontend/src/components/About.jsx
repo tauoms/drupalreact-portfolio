@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import { fetchContent } from "../services/api";
+import { fetchContent, localhostAddress } from "../services/api";
 
 const About = () => {
   const [content, setContent] = useState(null);
+  const [included, setIndluded] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchContent("node/about")
+    fetchContent("node/about?include=field_image")
       .then((data) => {
         console.log("Fetched data:", data); // Log the fetched data
         setContent(data.data[0]); // Access the first item in the data array
+        setIndluded(data.included);
         setLoading(false);
       })
       .catch((error) => {
@@ -28,17 +30,39 @@ const About = () => {
     return <div>Error loading content: {error.message}</div>;
   }
 
+  const imageData = content?.relationships?.field_image?.data; // Get the related image data
+
+  // Find the image file in included data based on the ID
+  const imageFile = included?.find((image) => image.id === imageData?.id);
+  const imageUrl = imageFile
+    ? `${localhostAddress}${imageFile.attributes.uri.url}`
+    : null;
+
   return (
-    <div>
+    <section id="about">
       <h1>About</h1>
-      {content && content.attributes && content.attributes.body ? (
-        <div
-          dangerouslySetInnerHTML={{ __html: content.attributes.body.value }}
-        />
-      ) : (
-        <div>No content available</div>
-      )}
-    </div>
+      <div className="text-container">
+        {content && content.attributes && content.attributes.body ? (
+          <>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: content.attributes.body.value,
+              }}
+            />
+            {imageUrl && (
+              <img
+                src={imageUrl}
+                alt={imageData.meta.alt}
+                width={imageData.meta.width}
+                height={imageData.meta.height}
+              />
+            )}
+          </>
+        ) : (
+          <div>No content available</div>
+        )}
+      </div>
+    </section>
   );
 };
 

@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:52142/jsonapi";
+const localhostAddress = "http://localhost:52142"; // Update this if your localhost address changes
+const API_URL = `${localhostAddress}/jsonapi`;
 
 export const fetchContent = async (contentType) => {
   try {
@@ -12,3 +13,5 @@ export const fetchContent = async (contentType) => {
     throw error;
   }
 };
+
+export { localhostAddress };
