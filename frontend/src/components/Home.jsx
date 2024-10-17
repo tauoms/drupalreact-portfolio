@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { fetchContent } from '../services/api';
+import { useEffect, useState } from "react";
+import { fetchContent } from "../services/api";
 
 const Home = () => {
   const [content, setContent] = useState(null);
@@ -7,14 +7,14 @@ const Home = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchContent('node/home')
+    fetchContent("node/home")
       .then((data) => {
-        console.log('Fetched data:', data); // Log the fetched data
+        console.log("Fetched data:", data); // Log the fetched data
         setContent(data.data[0]); // Access the first item in the data array
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching content:', error); // Log any errors
+        console.error("Error fetching content:", error); // Log any errors
         setError(error);
         setLoading(false);
       });
@@ -30,7 +30,16 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
+      <div className="welcome-text">
+        <h2>tuomas</h2>
+        <h2>kohvakka</h2>
+        <h3>
+          <span id="fswds">full stack web development student</span>
+          <br />
+          based in <br />
+          Helsinki, Finland.
+        </h3>
+      </div>
       {content && content.attributes && content.attributes.body ? (
         <div
           dangerouslySetInnerHTML={{ __html: content.attributes.body.value }}
